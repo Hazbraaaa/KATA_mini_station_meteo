@@ -36,15 +36,7 @@ async function fetchCoordinates(cityName) {
         const response = await fetch(`https://nominatim.openstreetmap.org/search?q=${cityName}&format=json&addressdetails=1&limit=1`);
         const data = await response.json();
 
-        if (data[0].addresstype === "city") {
-            city.innerText = data[0].address.city;
-        }
-        else if (data[0].addresstype === "town") {
-            city.innerText = data[0].address.town;
-        }
-        else if (data[0].addresstype === "village") {
-            city.innerText = data[0].address.village;
-        }
+        city.innerText = data[0].name;
         gps.innerText = `Coordonnées GPS: ${data[0].lat}, ${data[0].lon}`;
         fetchWeather(data[0].lat, data[0].lon);
         fetchLastThreeTemp(data[0].lat, data[0].lon);
