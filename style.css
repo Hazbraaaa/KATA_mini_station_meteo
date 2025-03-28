@@ -2,6 +2,7 @@ body {
     font-family: 'Arial', sans-serif;
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
@@ -92,4 +93,15 @@ body {
 .loading {
     opacity: 0.5;
     pointer-events: none;
+}
+
+.canvas-container {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    padding: 30px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    margin-top: 2em;
 }

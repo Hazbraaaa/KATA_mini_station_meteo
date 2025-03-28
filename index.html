@@ -6,6 +6,7 @@
     <title>Mini-Station Météo</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="weather-container">
@@ -19,6 +20,9 @@
         <div id="humidity">-%</div>
         <div id="precipitation">-mm</div>
         <div id="details">Mise à jour en cours...</div>
+    </div>
+    <div class="canvas-container" style="visibility: hidden;">
+        <canvas id="last-three-days"></canvas>
     </div>
 </body>
 </html>
