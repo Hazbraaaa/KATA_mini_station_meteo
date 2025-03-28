@@ -6,6 +6,8 @@ const city = document.querySelector("#city");
 const gps = document.querySelector("#gps");
 const temperature = document.querySelector("#temperature");
 const details = document.querySelector("#details");
+const humidity = document.querySelector("#humidity");
+const precipitation = document.querySelector("#precipitation");
 
 
 // init functions
@@ -31,6 +33,8 @@ async function fetchCoordinates(cityName) {
         city.innerText = "Ville non trouvée";
         gps.innerText = "-";
         temperature.innerText = "-°C";
+        humidity.innerText = "-%";
+        precipitation.innerText = "-mm";
         details.innerText = "Vérifier le nom de la ville";
     }
 }
@@ -41,10 +45,14 @@ async function fetchWeather(lat, lon) {
         const data = await response.json();
         
         temperature.innerText = `${data.current.temperature_2m}°C`;
+        humidity.innerText = `${data.current.relative_humidity_2m}%`;
+        precipitation.innerText = `${data.current.precipitation}mm`;
         details.innerText = "Température actuelle";
     } catch (error) {
         console.error(error);
         temperature.innerText = "-°C";
+        humidity.innerText = "-%";
+        precipitation.innerText = "-mm";
     }
 }
 

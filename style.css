@@ -65,6 +65,18 @@ body {
     color: #2c3e50;
 }
 
+#humidity {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+#precipitation {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
 #gps {
     margin-top: 12px;
     margin-bottom: 12px;
